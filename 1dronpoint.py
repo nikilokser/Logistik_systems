@@ -3,6 +3,9 @@ from clover import srv
 from std_srvs.srv import Trigger
 import math
 from clover.srv import SetLEDEffect
+from tqdm import tqdm
+
+lst = [1 for _ in range(120)]
 
 rospy.init_node('flight')
 
@@ -31,9 +34,11 @@ navigate_wait(x=0, y=0, z=1.5, frame_id='body', auto_arm=True)
 set_effect(effect='blink', r=0, g=0, b=200)
 navigate_wait(x=0, y=2, z=2, frame_id='aruco_map')
 land()
+rospy.sleep(7)
 print("Charging")
 set_effect(effect='rainbow')
-rospy.sleep(120)
+for _ in tqdm(lst):
+    rospy.sleep(1)
 print("Charged")
 navigate_wait(x=0, y=0, z=1.5, frame_id='body', auto_arm=True)
 set_effect(r=0, g=0, b=200)
