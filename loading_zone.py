@@ -29,5 +29,5 @@ def navigate_wait(x=0.0, y=0.0, z=0.0, yaw=float('nan'), speed=0.5, frame_id='',
 set_effect(r=0, g=0, b=200)
 navigate_wait(x=0, y=0, z=1.5, frame_id='body', auto_arm=True)
 set_effect(r=0, g=200, b=0)
-navigate_wait(x=3, y=0.8, z=1.5, frame_id='aruco_map')
+navigate_wait(x=0.8, y=5.5, z=1.5, frame_id='aruco_map')
 land()
