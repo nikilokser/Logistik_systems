@@ -5,8 +5,6 @@ import math
 from clover.srv import SetLEDEffect
 from tqdm import tqdm
 
-lst = [1 for _ in range(120)]
-
 rospy.init_node('flight')
 
 get_telemetry = rospy.ServiceProxy('get_telemetry', srv.GetTelemetry)
@@ -37,7 +35,7 @@ land()
 rospy.sleep(7)
 print("Charging")
 set_effect(effect='rainbow')
-for _ in tqdm(lst):
+for _ in tqdm(range(120)):
     rospy.sleep(1)
 print("Charged")
 navigate_wait(x=0, y=0, z=1.5, frame_id='body', auto_arm=True)
