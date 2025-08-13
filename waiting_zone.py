@@ -27,7 +27,7 @@ def navigate_wait(x=0.0, y=0.0, z=0.0, yaw=float('nan'), speed=1, frame_id='', a
         rospy.sleep(0.2)
 
 
-navigate_wait(x=0, y=0, z=1.5, frame_id='body', auto_arm=True)
+navigate_wait(x=0, y=0, z=2, frame_id='body', auto_arm=True)
 set_effect(effect='blink', r=0, g=200, b=0)
 navigate_wait(x=5.5, y=5.5, z=1.5, frame_id='aruco_map')
 land()
