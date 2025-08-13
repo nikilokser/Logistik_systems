@@ -9,10 +9,10 @@ from clover.srv import SetLEDEffect
 set_effect = rospy.ServiceProxy('led/set_effect', SetLEDEffect)
 pi = pigpio.pi()
 
-pi.set_mode(13, pigpio.OUTPUT)
+pi.set_mode(12, pigpio.OUTPUT)
 
 set_effect(r=200, g=0, b=0)
 
-pi.set_servo_pulsewidth(13, 1000)
+pi.set_servo_pulsewidth(12, 1000)
 
-time.sleep(2)
+time.sleep(1)

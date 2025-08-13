@@ -17,7 +17,7 @@ land = rospy.ServiceProxy('land', Trigger)
 set_effect = rospy.ServiceProxy('led/set_effect', SetLEDEffect)
 
 
-def navigate_wait(x=0.0, y=0.0, z=0.0, yaw=float('nan'), speed=0.5, frame_id='', auto_arm=False, tolerance=0.2):
+def navigate_wait(x=0.0, y=0.0, z=0.0, yaw=float('nan'), speed=0.7, frame_id='', auto_arm=False, tolerance=0.2):
     navigate(x=x, y=y, z=z, yaw=yaw, speed=speed, frame_id=frame_id, auto_arm=auto_arm)
 
     while not rospy.is_shutdown():
@@ -29,5 +29,5 @@ def navigate_wait(x=0.0, y=0.0, z=0.0, yaw=float('nan'), speed=0.5, frame_id='',
 set_effect(r=0, g=0, b=200)
 navigate_wait(x=0, y=0, z=1.5, frame_id='body', auto_arm=True)
 set_effect(r=0, g=200, b=0)
-navigate_wait(x=0.8, y=5.5, z=1.5, frame_id='aruco_map')
+navigate_wait(x=0.8, y=5.5, z=2, frame_id='aruco_map')
 land()

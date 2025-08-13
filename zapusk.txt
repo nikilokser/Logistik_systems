@@ -1,0 +1,4 @@
+python3 1loading_zone.py    python3 2loading_zone.py
+python3 servo_close.py      python3 servo_close.py
+python3 1dronpoint.py       python3 waiting_zone.py
+                            python3 2dronpoint.py
